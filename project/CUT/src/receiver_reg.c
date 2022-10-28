@@ -14,14 +14,12 @@
 #include<functions.h>
 #include<macros.h>
 #include<stdbool.h>
-
 void receiver_reg()
 {
 	FILE *fp;
 	fp=fopen("../data/receiver.txt","a");
 	r_reg *start=NULL;
 	r_reg *m=(r_reg *)calloc(1,sizeof(r_reg));
-
 	if(fp==NULL)
 	{
          	printf("\nFile does not Exist");
@@ -29,14 +27,12 @@ void receiver_reg()
 	}
 	else
 	{
-
-			        
-		printf("\n****************************************************************\n");
+                printf("\n****************************************************************\n");
 		printf("                        Registration Form                           ");
         	printf("\n****************************************************************\n");
 		while(1)
 		{
-	       	 		printf("\nEnter your Aadhar Number : ");
+				printf("\nEnter your Aadhar Number : ");
 	        		scanf("%lld",&m->aadharno);
 		          	long temp=m->aadharno;
 			  	int d=0;
@@ -75,7 +71,7 @@ void receiver_reg()
 			printf("\nEnter your age : ");
         		scanf("%d",&m->age);
 			if(isdigit(m->age))
-					return;
+			      return;
 			else
 				break;
 		}
@@ -83,11 +79,8 @@ void receiver_reg()
 		{
 			printf("\nEnter your blood group:");
 			scanf("%s",m->bgroup);
-		       break;			
-
-		
+		       		break;			
 		}
-
 		m->link = NULL;
 		if(start == NULL)
 		{
