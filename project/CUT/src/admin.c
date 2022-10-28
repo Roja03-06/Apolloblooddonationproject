@@ -19,8 +19,7 @@ void admin()
         if(info==NULL)
         {
                 printf("\nFile does not exists ");
-		return;
-                
+		return;        
         }
         else
         {
@@ -40,12 +39,8 @@ void admin()
                 }
                 else
                         printf("\nInvalid login details");
-		        
-        
-       }
-	fclose(info);
-	
-	
+        }
+	fclose(info);	
 }
 
 
