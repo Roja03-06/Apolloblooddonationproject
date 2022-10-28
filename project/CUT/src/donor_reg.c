@@ -16,7 +16,6 @@
 #include<macros.h>
 reg *start=NULL;
 int donor_reg()
-
 {
 	FILE *log;
 	log=fopen("../data/donor.txt","a");
@@ -32,23 +31,22 @@ int donor_reg()
 		printf("\n****************************************************************\n");
 		printf("                        Registration Form                           ");
         	printf("\n****************************************************************\n");
-
       		while(1)
 		{
-	       	 	printf("\nEnter your Aadhar Number : ");
-	        	scanf("%ld",&node->aadharno);
+	       	 	  printf("\nEnter your Aadhar Number : ");
+	        	  scanf("%ld",&node->aadharno);
 		          long temp=node->aadharno;
 			  int d=0;
                           while(temp>0)
 		       	  {
-			  temp=temp/10;
-	        	  d++;
+			  	temp=temp/10;
+	        	  	d++;
         	          }
 			  if(d<12 || d>12)
 			   {
 		
 	               		 printf("\nAadhar is not valid !!!Please try Again ");
-				continue;
+					continue;
 			   }
 			  else
 				break;
@@ -61,8 +59,7 @@ int donor_reg()
 	                fgets(node->dname,MAX,stdin);
 			node->dname[strlen(node->dname)-1]='\0';
 			if(isvalidate(node->dname))
-				
-				break;
+		               break;
 			else
 			{
 				printf("\nName is not valid !!! ");
@@ -76,10 +73,9 @@ int donor_reg()
 			if(node->age < 18)
 			{
 				printf("\nYou are Not eligible for the registration!! ");
-				return 0;
+					return 0;
 			}
 			else if(isdigit(node->age))
-
 				return 0;
 			else
 				break;
@@ -88,7 +84,7 @@ int donor_reg()
    		{
    			printf("\nEnter your blood group: ");
    			scanf("%s",node->bgroup);
-		break;	
+			break;	
   		}
 	        while(1)
    		{
@@ -101,9 +97,7 @@ int donor_reg()
 			}
 			else
 				break;
-    
   		}
-
 		node->link = NULL;
 		if(start == NULL)
 		{
@@ -133,13 +127,10 @@ int donor_reg()
 			}
 			q->link=node;
 			if(!duplicate)
-		
 			fprintf(log,"%lld %s %d %s  %d \n",node->aadharno,node->dname,node->age,node->bgroup,node->units);	
 		}
-
 		printf("\nWelcome %s !!!\n",node->dname);
 		printf("Thank you for Registration with us !!!");
-		
 	}
 	fclose(log);
 	menu();
