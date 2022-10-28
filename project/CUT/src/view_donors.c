@@ -14,7 +14,6 @@
 #include<string.h>
 void view_donors()
 {
-	
 	FILE *fr;
 	fr=fopen("../data/donor.txt","r");
 	if(fr==NULL)
@@ -54,7 +53,6 @@ void view_donors()
 				q->link = temp;
 			}
 			fscanf(fr,"%lld%s%d%s%d",&aadharno,dname,&age,bgroup,&units);
-
 		}
 		fclose(fr);
 		reg *q = start;
