@@ -18,13 +18,11 @@ void update_donor( )
 {
 	FILE *fr = fopen("../data/donor.txt","r");
 	FILE *fw = fopen("../data/temp.txt","w");
-	
 	long long  adno;
 	int units , ag;
 	char name[20],bg[20];
 	fscanf(fr,"%lld%s%d%s%d",&adno,name,&ag,bg,&units);
 	long long no;
-
 	printf("\nEnter the aadhar number of the donor ");
 	scanf("%lld",&no);	
 	int flag = 0;
