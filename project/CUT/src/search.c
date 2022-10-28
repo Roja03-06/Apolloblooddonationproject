@@ -29,7 +29,6 @@ void search()
 		int age,units;
 		char dname[20],bgroup[20];
 		while( EOF!=fscanf(fp,"%lld%s%d%s%d\n",&aadharno,dname,&age,bgroup,&units))
-		
 		{
 			reg *r1=(reg *)calloc(1,sizeof(reg));
 			r1->aadharno=aadharno;
@@ -46,16 +45,12 @@ void search()
 			{
 				reg *q=start;
 				while(q != NULL && q->link!=NULL)
-					{ 
+				{
 					  q=q->link;
-				   
 				}
 				q->link=r1;
-
 			}
-			
 		}
-		
 		for(reg *q=start;q!=NULL;q=q->link)
 		{
 			if(strcmp(bg,q->bgroup)==0)
