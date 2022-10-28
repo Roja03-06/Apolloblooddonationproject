@@ -20,13 +20,10 @@ void del_donor()
         printf("\nEnter the Aadhar Number to delete the record:");
 	scanf("%lld",&adno);
   	while(fscanf(fp,"%lld%s%d%s%d",&r2->aadharno,r2->dname,&r2->age,r2->bgroup,&r2->units)!=EOF)
-
 	{	
-
 		if(r2->aadharno!=adno)
 		{	
-                       printf("%lld%s%d%s%d\n",r2->aadharno,r2->dname,r2->age,r2->bgroup,r2->units);
-
+			printf("%lld%s%d%s%d\n",r2->aadharno,r2->dname,r2->age,r2->bgroup,r2->units);
 			fprintf(fw,"\n%-10lld%-10s%-10d%-10s%d\n",r2->aadharno,r2->dname,r2->age,r2->bgroup,r2->units);
                              
                  }
@@ -37,6 +34,4 @@ void del_donor()
         rename("../data/ex.txt","../data/donor.txt");
         printf("\nRecord deleted");
 	return;
-
-
 }
