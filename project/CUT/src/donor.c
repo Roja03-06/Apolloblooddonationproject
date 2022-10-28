@@ -21,13 +21,13 @@ void donor()
                 scanf("%d",&choice);
                 switch(choice)
                 {
-                        case 1: del_donor();
-				break;
-			case 2: update_donor();
-                                break;
-                        case 3: view_donors();
-			        break;
-		        case 4: menu();
+                        case 1:  del_donor();
+				 break;
+			case 2:  update_donor();
+                                 break;
+                        case 3:  view_donors();
+			         break;
+		        case 4:  menu();
                         default: printf("\nInvalid Choice ");
 				 break;
                 }
