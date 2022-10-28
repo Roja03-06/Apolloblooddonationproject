@@ -10,7 +10,6 @@
 #include<functions.h>
 #include<macros.h>
 #include<struct.h>
-
 void donate( )
 {
 	long long dadno , radno ;
@@ -24,34 +23,32 @@ void donate( )
 	scanf("%d",&no);
 	if(dadno != radno)
 	{	
-	FILE *fr = fopen("../data/donor.txt","r");
-	FILE *fw = fopen("../data/temp2.txt","w");
-
-	long long adno;
-	int units , ag;
-	char name[20],bg[20];
-	printf("start reading\n");
-	
-	while(EOF !=fscanf(fr,"%lld%s%d%s%d",&adno,name,&ag,bg,&units) )
-	{
-		if(dadno == adno)
+		FILE *fr = fopen("../data/donor.txt","r");
+		FILE *fw = fopen("../data/temp2.txt","w");
+		long long adno;
+		int units , ag;
+		char name[20],bg[20];
+		printf("start reading\n");
+		while(EOF !=fscanf(fr,"%lld%s%d%s%d",&adno,name,&ag,bg,&units) )
 		{
-			units = units-no;
+			if(dadno == adno)
+			{
+				units = units-no;
 				printf("matched and updating the file\n");
-			fprintf(fw,"%lld %s %d %s %d\n",adno,name,ag,bg,units);			
+				fprintf(fw,"%lld %s %d %s %d\n",adno,name,ag,bg,units);			
+			}
+			else
+				fprintf(fw,"%lld %s %d %s %d\n",adno,name,ag,bg,units);	
+				fscanf(fr,"%lld%s%d%s%d",&adno,name,&ag,bg,&units);
+				printf("end\n");
 		}
-		else
-			fprintf(fw,"%lld %s %d %s %d\n",adno,name,ag,bg,units);	
-			fscanf(fr,"%lld%s%d%s%d",&adno,name,&ag,bg,&units);
-			printf("end\n");
-	}
-	fclose(fr);
-	fclose(fw);
-	remove("../data/donor.txt");
-	rename("../data/temp2.txt","../data/donor.txt");	
-	printf("update donate\n");
+		fclose(fr);
+		fclose(fw);
+		remove("../data/donor.txt");
+		rename("../data/temp2.txt","../data/donor.txt");	
+		printf("update donate\n");
 		fprintf(fw1,"\n%lld %lld %d",dadno,radno,no);
-	fclose(fw1);
+		fclose(fw1);
 	}
 	else
 		printf("Aadhar number of reciever and donor cannot be same ");	
