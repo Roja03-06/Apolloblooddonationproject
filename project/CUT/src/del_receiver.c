@@ -21,13 +21,10 @@ void del_receiver()
 	scanf("%lld",&adno);
   	while(fscanf(fp,"%lld%s%d%s",&r2->aadharno,r2->rname,&r2->age,r2->bgroup)!=EOF)
 	{
-
-		if(r2->aadharno!=adno)
-		{
-			fprintf(fw,"\n%-10lld%-10s%-10d%s\n",r2->aadharno,r2->rname,r2->age,r2->bgroup);
-                        
-		}
-
+                   if(r2->aadharno!=adno)
+		   {
+			    fprintf(fw,"\n%-10lld%-10s%-10d%s\n",r2->aadharno,r2->rname,r2->age,r2->bgroup);
+                  }
 	}	
 	fclose(fp);
 	fclose(fw);
@@ -35,6 +32,4 @@ void del_receiver()
         remove("../data/receiver.txt");
 	rename("../data/ex.txt","../data/receiver.txt");
 	return;
-
-
 }
