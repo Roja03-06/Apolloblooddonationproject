@@ -18,6 +18,5 @@ int isvalidate(char *name)
 			return 0;
 	}
 	return 1;
-
 }
 
